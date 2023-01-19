@@ -4,7 +4,7 @@
 #include "port_led.h"
 #include "port_system.h"
 
-#define T_LED_MS 1000  // Period of the LED
+#define T_LED_MS 1000 // Period of the LED
 
 /**
  * @brief main routine
