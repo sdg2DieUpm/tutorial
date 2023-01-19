@@ -35,6 +35,8 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
+output/
 
 # Debug files
 *.dSYM/
@@ -50,3 +52,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Emacs
+*~
+
+# Doxygen
+docs/html/
+
+# MacOS
+.DS_Store
+
+# Cortex-Debug
+.cortex-debug.*.state.json
