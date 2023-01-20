@@ -13,35 +13,9 @@ typedef struct
     uint32_t duration;      /*!< How much time the button has been pressed */
 } fsm_button_t;
 
-/**
- * @brief returns how much time the button has been pressed.
- *
- * > **TO-DO alumnos:**
- * >
- * > ✅ 1. Cast pointer to button FSM \n
- * > ✅ 2. return value of the duration counter
- *
- * @param p_fsm pointer to the button FSM.
- * @return uint32_t measured duration.
- */
-uint32_t fsm_button_get_duration(fsm_t *p_fsm)
-{
-    return 0;
-}
+/* **TO-DO alumnos: ** implement fsm_button_get_duration */
 
-/**
- * @brief resets the duration counter of the button FSM
- *
- * > **TO-DO alumnos:**
- * >
- * > ✅ 1. Cast pointer to button FSM \n
- * > ✅ 2. set the duration counter to 0
- * 
- * @param p_fsm pointer to the button FSM.
- */
-void fsm_button_reset_duration(fsm_t *p_fsm)
-{
-}
+/* **TO-DO alumnos: ** implement fsm_button_reset_duration */
 
 /**
  * @brief checks if the button is released.

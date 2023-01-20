@@ -7,9 +7,7 @@
 
 typedef struct
 {
-    fsm_t fsm;              /*!< Internal FSM from the library */
-    fsm_t *p_button;        /*!< Pointer to button FSM */
-    uint32_t min_duration;  /*!< Minimum button pulse duration (in ms) for toggling the LED */
+    /* **TO-DO alumnos:** add all the fields required for this FSM */
 } fsm_led_t;
 
 /**
@@ -42,9 +40,6 @@ static bool check_button_duration(fsm_t *p_fsm)
  */
 static void do_toggle(fsm_t *p_fsm)
 {
-    fsm_led_t *p_led = (fsm_led_t *)p_fsm;
-    fsm_button_reset_duration(p_led->p_button);
-    port_led_toggle();
 }
 
 /**

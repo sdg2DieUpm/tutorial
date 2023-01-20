@@ -78,7 +78,7 @@ static fsm_trans_t fsm_blink_tt[] = {
 
 fsm_t *fsm_blink_new(uint32_t period_ms)
 {
-    fsm_t *p_fsm = (fsm_t *)malloc(sizeof(fsm_blink_t));
+    fsm_t *p_fsm = (fsm_t *) malloc(sizeof(fsm_blink_t));
     if (p_fsm)
     {
         fsm_blink_init(p_fsm, period_ms);
@@ -88,7 +88,7 @@ fsm_t *fsm_blink_new(uint32_t period_ms)
 
 void fsm_blink_init(fsm_t *p_fsm, uint32_t period_ms)
 {
-    fsm_blink_t *p_blink = (fsm_blink_t *)p_fsm;
+    fsm_blink_t *p_blink = (fsm_blink_t *) p_fsm;
     fsm_init(&p_blink->fsm, fsm_blink_tt);
     /* **TO-DO alumnos: complete this function ** */
 }

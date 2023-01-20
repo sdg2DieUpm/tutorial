@@ -33,6 +33,19 @@ fsm_t * fsm_button_new(uint32_t debounce_time);
 void fsm_button_init(fsm_t *p_fsm, uint32_t debounce_time);
 
 /**
+ * @brief it returns the latest duration measured by the button FSM.
+ *
+ * > **TO-DO alumnos:**
+ * >
+ * > ✅ 1. Cast pointer to button FSM \n
+ * > ✅ 2. return the value of the duration counter
+ *
+ * @param p_fsm pointer to the button FSM.
+ * @return uint32_t amount of time (in ms) that the button has been pressed.
+ */
+uint32_t fsm_button_get_duration(fsm_t *p_fsm);
+
+/**
  * @brief It sets the duration measured by the button FSM to 0.
  * 
  * > **TO-DO alumnos:**
@@ -43,18 +56,5 @@ void fsm_button_init(fsm_t *p_fsm, uint32_t debounce_time);
  * @param p_fsm pointer to the button FSM.
  */
 void fsm_button_reset_duration(fsm_t *p_fsm);
-
-/**
- * @brief it returns the latest duration measured by the button FSM.
- * 
- * > **TO-DO alumnos:**
- * >
- * > ✅ 1. Cast pointer to button FSM \n
- * > ✅ 2. return the value of the duration counter
- *
- * @param p_fsm pointer to the button FSM.
- * @return uint32_t amount of time (in ms) that the button has been pressed.
- */
-uint32_t fsm_button_get_duration(fsm_t *p_fsm);
 
 #endif // FSM_BUTTON_H_
