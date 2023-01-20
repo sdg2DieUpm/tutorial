@@ -45,7 +45,7 @@ void SystemInit(void)
  * @note This function starts a system timer that generates a SysTick every 1 ms.
  * @retval None
  */
-void system_clock_config(void)
+static void system_clock_config(void)
 {
   /** Configure the main internal regulator output voltage */
   /* Power controller (PWR) */
@@ -117,7 +117,7 @@ void port_system_delay_ms(uint32_t ms)
 {
   uint32_t tickstart = port_system_get_millis();
 
-  while ((port_system_get_millis() - tickstart) < ms)
+  while((port_system_get_millis() - tickstart) < ms)
   {
   }
 }

@@ -96,12 +96,14 @@ uint32_t port_system_get_millis(void);
 void port_system_delay_ms(uint32_t ms);
 
 /**
- * @brief wait for some milliseconds from a given time reference
+ * @brief Wait for some milliseconds from a time reference.
  *
- * @note after waiting, the time reference is updated to the system time at return.
+ * @note It also updates the time reference to the system time at return.
  *
- * @param p_t pointer to time reference.
+ * @param p_t Pointer to the time reference
  * @param ms Number of milliseconds to wait
+ *
+ * @retval None
  */
 void port_system_delay_until_ms(uint32_t *p_t, uint32_t ms);
 
