@@ -38,6 +38,7 @@
       "type": "cortex-debug",
       "servertype": "openocd",
       "device": "STM32F411RE",
+      "serverpath": "C:/Program Files/openocd/bin/openocd.exe",
       "configFiles": [
         "port/nucleo_stm32f411re/openocd.cfg"
       ],
