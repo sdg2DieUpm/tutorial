@@ -9,6 +9,7 @@
       "runToEntryPoint": "main",
       "type": "cortex-debug",
       "servertype": "openocd",
+      "serverpath": "C:/Program Files/openocd/bin/openocd.exe", // If you are not using Windows, you must remove this line
       "device": "STM32F446RE",
       "configFiles": [
         "port/nucleo_stm32f446re/openocd.cfg"
@@ -38,7 +39,7 @@
       "type": "cortex-debug",
       "servertype": "openocd",
       "device": "STM32F411RE",
-      "serverpath": "C:/Program Files/openocd/bin/openocd.exe",
+      "serverpath": "C:/Program Files/openocd/bin/openocd.exe", // If you are not using Windows, you must remove this line
       "configFiles": [
         "port/nucleo_stm32f411re/openocd.cfg"
       ],
