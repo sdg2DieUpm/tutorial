@@ -49,7 +49,7 @@ Este código no implementa ninguna máquina de estados (FSM).
 ![Imagen de la placa Nucleo STM32F446RE](./assets/nucleo.jpg)
 
 @note
-Para añadir una imagen, guárdala en la carpeta `/docs/html/assets/` e inclúyela como `![Texto descriptivo (sale al poner el ratón encima)](./assets/nombre_fichero.extension)`
+Para añadir una imagen, guárdala en la carpeta `/docs/html/assets/` e inclúyela como `![Pie de foto](./assets/nombre_fichero.extension)`
 
 
 @note
@@ -77,9 +77,22 @@ Si en tu proyecto haces mejoras, **¡no olvides meter un vídeo demostrándolas!
 @note
 Se podrían meter vídeos como ficheros adjuntos, pero haría el proyecto muy pesado.\n
 Una forma inteligente y elegante puede ser añadir una imagen y que al pinchar a esa imagen te lleve al vídeo que esté subido, por ejemplo, a Youtube. 
-`[![Texto](./assets/frame_o_imagen_del_video.extension)](URL "Texto descriptivo (sale al poner el ratón encima).")`
+`[![Pie de foto](./assets/frame_o_imagen_del_video.extension)](URL "Texto descriptivo (sale al poner el ratón encima).")`
 `
 Un ejemplo lo tienes a continuación. Pincha en la imagen, y verás.
 
 [![Demostrador del proyecto Retina](./assets/youtube.jpg)](https://youtu.be/A4TQE9qLXGI "Si pinchas en la imagen te lleva a un vídeo.")
 
+
+## Documentación del código
+
+En este fichero `README.md` solo se muestra la "memoria" introductoria del proyecto y vuestras mejoras. **Solo tenéis que hacerla si hacéis algún tipo de mejora, SW o HW, incluyendo vuestros diagramas, imágenes y el vídeo demostrativo**, que quién coja el proyecto sepa de qué va.
+
+No obstante, **es parte de la calificación la documentación de las funciones**. En las funciones también podéis meter imágenes si lo necesitáis, o si queréis, para explicar alguna particularidad. Para ello solo tienes que:
+
+1. Guardar la imagen en `./docs/html/assets/` (o en una subcarpeta dentro, como tú te organices mejor)
+2. Añadir en la descripción este comando: `@image html nombre_imagen.extension`
+3. Ir a tu Doxyfile y escribir en el campo `IMAGE_PATH` la ruta de tus imagen, que quede de tal forma: `IMAGE_PATH = ./docs/html/assets/` para indicarle a Doxygen donde están guardadas tus imágenes.
+
+Quedaría algo así:
+![Añadir imagen en descripción de función](./assets/ejemplo_header.png)
