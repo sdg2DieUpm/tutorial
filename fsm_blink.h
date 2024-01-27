@@ -55,7 +55,7 @@ fsm_t *fsm_blink_new(uint32_t period_ms);
 /**
  * @brief Initializes all the parameters for an FSM that blinks the LED of the board.
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Cast pointer to blink FSM (we already provide this) \n
  * > ✅ 2. Initialize its inner FSM (we already provide this) \n

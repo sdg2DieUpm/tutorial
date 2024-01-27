@@ -5,11 +5,15 @@
  * @date 2024-01-01
  */
 /* Includes ------------------------------------------------------------------*/
-#include "fsm_blink.h"
+/* Standard C includes */
+#include <stdlib.h> 
 
 /* HW dependent includes */
 #include "port_system.h"
 #include "port_led.h"
+
+/* Other includes */
+#include "fsm_blink.h"
 
 /* State machine input or transition functions */
 /**
@@ -17,7 +21,7 @@
  *
  * @param p_fsm pointer to the blink FSM.
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Cast the generic FSM pointer to blink FSM pointer \n
  * > ✅ 2. Check if current system time is greater than or equal to the FSM's last time + half of its period
@@ -35,7 +39,7 @@ static bool check_timeout(fsm_t *p_fsm)
  *
  * @param p_fsm pointer to the blink FSM.
  *
- * > **TO-DO alumnos:**
+ * > ** TODO alumnos:**
  * >
  * > ✅ 1. Cast the generic FSM pointer to blink FSM pointer \n
  * > ✅ 2. Update FSM's last time to current system time \n
@@ -50,7 +54,7 @@ static void do_toggle(fsm_t *p_fsm)
 /**
  * @brief Blink FSM transition table
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Define the FSM's only transition for toggling the LED. \n
  * > ✅ 2. Add a null transition (this is mandatory for all the FSMs).
@@ -73,5 +77,5 @@ void fsm_blink_init(fsm_t *p_fsm, uint32_t period_ms)
     fsm_blink_t *p_blink = (fsm_blink_t *)p_fsm;
     fsm_init(&p_blink->fsm, fsm_blink_tt);
     
-    /* **TO-DO alumnos: complete this function ** */
+    /* **TODO alumnos: complete this function ** */
 }
