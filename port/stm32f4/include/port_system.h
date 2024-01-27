@@ -13,6 +13,7 @@
 #include <stdint.h>
 
 /* Defines -------------------------------------------------------------------*/
+#define GPIO_MODE_IN 0x00      /*!< GPIO as input */
 #define GPIO_MODE_OUT 0x01     /*!< GPIO as output */
 #define GPIO_PUPDR_NOPULL 0x00 /*!< GPIO no pull up or down */
 
