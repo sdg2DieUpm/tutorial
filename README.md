@@ -15,7 +15,7 @@ Download the files of this repository and copy them into the corresponding folde
 
 ### Prerequisites
 
-Be sure that you fulfill the prerequisites of the MatrixMCU toolkit and it is up to date and **complete the previous tutorial ([tutorial_1](https://github.com/sdg2DieUpm/tutorial/tree/tutorial_1)).
+Be sure that you fulfill the prerequisites of the MatrixMCU toolkit and it is up to date and **complete the previous tutorial ([tutorial_1](https://github.com/sdg2DieUpm/tutorial/tree/tutorial_1)).**
 
 ## Authors
 
