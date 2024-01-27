@@ -5,11 +5,15 @@
  * @date 2024-01-01
  */
 /* Includes ------------------------------------------------------------------*/
-#include "fsm_blink.h"
+/* Standard C includes */
+#include <stdlib.h> 
 
 /* HW dependent includes */
 #include "port_system.h"
 #include "port_led.h"
+
+/* Other includes */
+#include "fsm_blink.h"
 
 /* State machine input or transition functions */
 /**
