@@ -24,7 +24,7 @@
 /**
  * @brief main routine
  *
- *  * > **TO-DO alumnos:**
+ *  * > **TODO alumnos:**
  * >
  * > ✅ 1. Initialize the system \n
  * > ✅ 2. Initialize the LED GPIO \n

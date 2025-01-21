@@ -1,19 +1,20 @@
 /**
  * @file interr.c
  * @brief Interrupt service routines for the STM32F4 platform.
- * @author Román Cárdenas, Alberto Boscá, Josué Pagán (r.cardenas@upm.es, j.pagan@upm.es, alberto.bosca@upm.es)
+ * @author Román Cárdenas (r.cardenas@upm.es)
  * @date 2024-01-01
  */
-/* Includes ------------------------------------------------------------------*/
-// Include HW dependencies:
-#include "port_system.h"
+// Include headers of different port elements:
 #include "stm32f4xx.h"
+#include "port_system.h"
 
-/* Interrupt service routines --------------------------------------------------*/
+//------------------------------------------------------
+// INTERRUPT SERVICE ROUTINES
+//------------------------------------------------------
 /**
  * @brief This function handles the System tick timer that increments the system millisecond counter.
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. **Increment the System tick counter `msTicks` in 1 count.** 
  *  `msTicks` is a `static volatile` variable declared in @link port_system.c @endlink. \n
