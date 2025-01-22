@@ -7,9 +7,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "port_button.h"
 #include "stm32f4xx.h"
+#include "stm32f4_button.h"
 
 /* Public functions ----------------------------------------------------------*/
 
-/* **TO-DO alumnos: ** implement port_button_gpio_setup */
+/* TODO alumnos: ** implement port_button_gpio_setup */
 
-/* **TO-DO alumnos: ** implement port_button_read */
+/* TODO alumnos: ** implement port_button_read */

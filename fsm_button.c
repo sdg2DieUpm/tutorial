@@ -16,11 +16,24 @@
 /* Other includes */
 #include "fsm_button.h"
 
+/**
+ * @brief Button FSM structure 
+ * 
+ */
+struct fsm_button_t
+{
+    fsm_t fsm;              /*!< Internal FSM from the library */
+    uint32_t debounce_time; /*!< Button debounce time in ms */
+    uint32_t next_timeout;  /*!< Next timeout for the debounce in ms */
+    uint32_t tick_pressed;  /*!< Number of system ticks when the button was pressed */
+    uint32_t duration;      /*!< How much time the button has been pressed */
+};
+
 /* State machine input or transition functions */
 /**
  * @brief checks if the button is released.
  *
- * > **TO-DO alumnos:**
+ * > TODO alumnos:**
  * >
  * > ✅ 1. Read and return the button state
  *
@@ -37,7 +50,7 @@ static bool check_button_released(fsm_t *p_fsm)
  *
  * @note it is the opposite to check_button_released
  *
- * > **TO-DO alumnos:**
+ * > TODO alumnos:**
  * >
  * > ✅ 1. Return the opposite to check_button_released
  *
@@ -52,7 +65,7 @@ static bool check_button_pressed(fsm_t *p_fsm)
 /**
  * @brief checks if the debounce time has passed.
  *
- * > **TO-DO alumnos:**
+ * > TODO alumnos:**
  * >
  * > ✅ 1. Cast pointer to button FSM \n
  * > ✅ 2. get current system time \n
@@ -70,7 +83,7 @@ static bool check_timeout(fsm_t *p_fsm)
 /**
  * @brief stores the current system time as the last time the button was pressed
  *
- * > **TO-DO alumnos:**
+ * > TODO alumnos:**
  * >
  * > ✅ 1. Cast pointer to button FSM \n
  * > ✅ 2. store current system time in tick_pressed \n
@@ -85,7 +98,7 @@ static void do_store_tick_pressed(fsm_t *p_fsm)
 /**
  * @brief it computes the time since the last time the button has been pressed.
  *
- * > **TO-DO alumnos:**
+ * > TODO alumnos:**
  * >
  * > ✅ 1. Cast pointer to button FSM \n
  * > ✅ 2. compute time since the last time the button was pressed \n
@@ -100,7 +113,7 @@ static void do_set_duration(fsm_t *p_fsm)
 /**
  * @brief Button FSM transition table
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Define the FSM's transitions. \n
  * > ✅ 2. Add a null transition (this is mandatory for all the FSMs).
@@ -110,23 +123,33 @@ static fsm_trans_t fsm_trans_button[] = {};
 
 /* FSM public functions */
 
-/* **TO-DO alumnos: ** implement fsm_button_get_duration */
+/* TODO alumnos: implement fsm_button_get_duration */
 
-/* **TO-DO alumnos: ** implement fsm_button_reset_duration */
+/* TODO alumnos: implement fsm_button_reset_duration */
 
-fsm_t *fsm_button_new(uint32_t debounce_time)
+static void fsm_button_init(fsm_button_t *p_fsm_button, uint32_t debounce_time)
 {
-    fsm_t *p_fsm = malloc(sizeof(fsm_button_t));
-    if (p_fsm)
-    {
-        fsm_button_init(p_fsm, debounce_time);
-    }
-    return p_fsm;
+    fsm_init(&p_fsm_button->fsm, fsm_trans_button);
+    /* TODO alumnos: complete this function */
 }
 
-void fsm_button_init(fsm_t *p_fsm, uint32_t debounce_time)
+
+fsm_button_t *fsm_button_new(uint32_t debounce_time)
 {
-    fsm_button_t *p_button = (fsm_button_t *)p_fsm;
-    fsm_init(&p_button->fsm, fsm_trans_button);
-    /* **TO-DO alumnos: complete this function ** */
+    fsm_button_t *p_fsm_button = malloc(sizeof(fsm_button_t));
+    if (p_fsm_button)
+    {
+        fsm_button_init(p_fsm_button, debounce_time);
+    }
+    return p_fsm_button;
+}
+
+void fsm_button_destroy(fsm_button_t *p_fsm_button)
+{
+    free(p_fsm_button);
+}
+
+void fsm_button_fire(fsm_button_t *p_fsm_button)
+{
+    fsm_fire(&p_fsm_button->fsm);
 }

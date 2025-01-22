@@ -14,25 +14,11 @@
 /* HW dependent includes */
 #include "port_system.h"
 
-/* Defines -------------------------------------------------------------------*/
-#define BUTTON_PORT GPIOC /*!< Button port */
-#define BUTTON_PIN 13     /*!< Button pin */
-
-#define MODER13_MASK (0x03 << BUTTON_PIN * 2) /*<! Mask for BUTTON_PIN in MODER register */
-#define PUDR13_MASK (0x03 << BUTTON_PIN * 2)  /*<! Mask for BUTTON_PIN in PUPDR register */
-
-#define MODER13_AS_INPUT (GPIO_MODE_IN << BUTTON_PIN * 2)       /*<! Input mode for BUTTON_PIN in MODER register */
-#define PUPDR13_AS_NOPUPD (GPIO_PUPDR_NOPULL << BUTTON_PIN * 2) /*<! No pull up/down for BUTTON_PIN in PUPDR register */
-#define IDR13_MASK (0x01 << BUTTON_PIN)                         /*<! Mask for BUTTON_PIN in IDR register */
-
-/* Typedefs ------------------------------------------------------------------*/
-
-
 /* Function prototypes and documentation ---------------------------------------*/
 /**
  * @brief Configures the GPIO pin of the button.
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Enable GPIOC clock in AHB1ENR \n
  * > ✅ 2. Clean previous configuration for pin 13 in MODER and PUPDR \n
@@ -45,7 +31,7 @@ void port_button_gpio_setup(void);
 /**
  * @brief Reads status of the button and returns true if it is pressed.
  *
- * > **TO-DO alumnos:**
+ * > **TODO alumnos:**
  * >
  * > ✅ 1. Read button value in the corresponding IDR register \n
  *
