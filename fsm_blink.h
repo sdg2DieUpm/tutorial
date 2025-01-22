@@ -18,26 +18,10 @@ enum FSM_BLINK_STATES
     IDLE, /*!< Idle state */
 };
 
-/**
- * @brief Estructura de la máquina de estados para hacer parpadear el LED.
- *
- * Al contrario que en Java o Python, C no implementa un mecanismo de programación orientado a objetos.
- * Por lo tanto, no tenemos ni clases, ni objetos, ni herencia.
- * Sin embargo, podemos usar el patrón de diseño por composición para emular la herencia.
- *
- * Para ello, el primer elemento de la estructura que "hereda" será del tipo de la estructura "padre".
- * En este caso, nuestra FSM heredaría de la estructura fsm_t.
- *
- * Como el primer elemento de nuestra estructura es del tipo fsm_t,
- * podemos tratar punteros a estructuras fsm_blink_t como si fuesen punteros a estructuras fsm_t.
- * De este modo, podemos hacer uso de las funciones de fsm_t con un puntero del tipo `fsm_blink_t`.
- */
-typedef struct fsm_blink_t
-{
-    fsm_t fsm;          //!< inner FSM. It must be the first element so we can use composition.
-    uint32_t period_ms; //!< LED toggling period.
-    uint32_t last_time; //!< Auxiliary variable to know when was the last time the LED toggled.
-} fsm_blink_t;
+/* Typedefs --------------------------------------------------------------------*/
+
+/* Opaque structure for the blink FSM: we know the structure exists, but not what it contains */
+typedef struct fsm_blink_t fsm_blink_t;
 
 /* Function prototypes and explanation -------------------------------------------------*/
 /**
@@ -50,21 +34,22 @@ typedef struct fsm_blink_t
  *
  * @return fsm_t* pointer to the LED FSM.
  */
-fsm_t *fsm_blink_new(uint32_t period_ms);
+fsm_blink_t * fsm_blink_new(uint32_t period_ms);
 
 /**
- * @brief Initializes all the parameters for an FSM that blinks the LED of the board.
+ * @brief Destroys the FSM for blinking the LED of the board.
  *
- * > **TODO alumnos:**
- * >
- * > ✅ 1. Cast pointer to blink FSM (we already provide this) \n
- * > ✅ 2. Initialize its inner FSM (we already provide this) \n
- * > ✅ 3. Fill all the fields of the blink FSM to their initial value \n
- * > ✅ 4. Configure the GPIO of the LED accordingly.
+ * @note This function uses free to release memory space in the heap for the FSM.
  *
- * @param p_fsm pointer to the FSM.
- * @param period_ms blinking period of the LED.
+ * @param p_fsm_blink pointer to the blink FSM.
  */
-void fsm_blink_init(fsm_t *p_fsm, uint32_t period_ms);
+void fsm_blink_destroy(fsm_blink_t *p_fsm_blink);
+
+/**
+ * @brief traverses the blink FSM transition table and executes the first transition whose guard condition is true.
+ * 
+ * @param p_fsm_blink pointer to the blink FSM.
+ */
+void fsm_blink_fire(fsm_blink_t *p_fsm_blink);
 
 #endif // FSM_BLINK_H_
