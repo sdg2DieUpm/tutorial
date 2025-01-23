@@ -12,8 +12,9 @@ Download the files of this repository and copy them into the corresponding folde
 
 - `fsm_button.c` into `common/src/`
 - `fsm_button.h` into `common/include/`
-- `port_button.c` into `port/stm32f4/src/`
-- `port_button.h` into `port/stm32f4/include/`
+- `port_button.h` into `port/include/`
+- `stm32f4_button.h` into `port/stm32f4/include/`
+- `stm32f4_button.c` into `port/stm32f4/src/`
 
 ### Prerequisites
 
